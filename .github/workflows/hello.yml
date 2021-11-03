@@ -35,3 +35,10 @@ jobs:
           echo Add other actions to build, test, and deploy your project. > test.txt
           pwd
           ls -lah
+          mkdir pub
+          mv test.txt pub
+      - name: publish my compiled app
+        uses: actions/upload-artifact@v2
+        with:
+          name: assets-for-download
+          path: pub
